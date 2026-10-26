@@ -1,0 +1,190 @@
+/* === RESET & UNIVERSAL BOX MODEL === */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+/* === NAVBAR POSITION FIXED === */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #0f172a;
+    color: #ffffff;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.nav-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #38bdf8;
+}
+
+/* === MAIN CONTENT (KOMPENSASI PADDING ATAS UNTUK NAVBAR FIXED) === */
+.main-content {
+    padding-top: 80px; /* Kompensasi tinggi navbar fixed agar konten tidak tertutup */
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 40px;
+}
+
+/* === POSITION STICKY CATEGORY === */
+.sticky-category {
+    position: sticky;
+    top: 60px; /* Menempel tepat di bawah navbar fixed */
+    background-color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    z-index: 900;
+    border-left: 5px solid #2563eb;
+}
+
+.sticky-category h2 {
+    font-size: 1.1rem;
+    color: #1e293b;
+}
+
+/* === LAYOUT KARTU PRODUK (DISPLAY INLINE-BLOCK) === */
+.product-container {
+    text-align: center;
+}
+
+.product-card {
+    display: inline-block;
+    vertical-align: top;
+    position: relative; /* Induk posisi untuk badge absolute */
+    width: 240px;
+    max-width: 100%;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 15px;
+    margin: 12px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover Transition Effect */
+}
+
+/* Hover Effect pada Kartu: Shadow Menebal */
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* === BADGE POSITION ABSOLUTE === */
+.badge {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #ffffff;
+    border-radius: 20px;
+    z-index: 10;
+}
+
+.badge-discount { background-color: #ef4444; }
+.badge-new { background-color: #10b981; }
+.badge-hot { background-color: #f59e0b; }
+
+/* === OVERFLOW HIDDEN + BORDER RADIUS UNTUK GAMBAR === */
+.image-wrapper {
+    width: 100%;
+    height: 160px;
+    border-radius: 8px;
+    overflow: hidden; /* Gambar membulat mengikuti border-radius wrapper */
+    background-color: #e2e8f0;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* === DETAIL PRODUK & TOMBOL === */
+.card-details {
+    margin-top: 12px;
+}
+
+.product-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #1e293b;
+    height: 42px; /* Menjaga tinggi teks agar sejajar */
+    overflow: hidden;
+}
+
+.product-price {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #2563eb;
+    margin-bottom: 12px;
+}
+
+.buy-btn {
+    width: 100%;
+    padding: 8px 0;
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transition Efek Warna Tombol */
+}
+
+/* Hover Effect pada Tombol */
+.buy-btn:hover {
+    background-color: #1d4ed8;
+}
+
+/* === FOOTER === */
+.footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.85rem;
+    color: #64748b;
+    background-color: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    margin-top: 40px;
+}
