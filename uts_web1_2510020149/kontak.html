@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak & Layanan | Barito Tech - Reza Permana</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- HEADER & NAVBAR FIXED -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Barito<span>Tech</span></a>
+            
+            <!-- Trik Checkbox CSS-Only Hamburger -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger" aria-label="Buka Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav class="nav-links">
+                <a href="index.html">Beranda</a>
+                <a href="index.html#produk">Produk & Layanan</a>
+                <a href="kontak.html" class="active">Kontak</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h1>Hubungi Kami & Daftar Layanan</h1>
+                <p>Silakan kirimkan kebutuhan teknis Anda atau tinjau rincian paket layanan kami di bawah ini.</p>
+            </div>
+
+            <!-- FORM KONTAK -->
+            <section class="contact-section">
+                <form action="#" method="post" class="contact-form">
+                    <fieldset>
+                        <legend>Formulir Konsultasi & Pemesanan</legend>
+
+                        <div class="form-group">
+                            <label for="nama">Nama Lengkap *</label>
+                            <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap Anda" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Alamat Email *</label>
+                            <input type="email" id="email" name="email" placeholder="nama@email.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subjek">Subjek Layanan *</label>
+                            <select id="subjek" name="subjek" required>
+                                <option value="">-- Pilih Jenis Layanan --</option>
+                                <option value="panel-plc">Perakitan Panel PLC & Otomasi</option>
+                                <option value="monitoring-air">Sistem Monitoring Level Air</option>
+                                <option value="audit-listrik">Audit & Troubleshooting Kelistrikan</option>
+                                <option value="penawaran-umum">Permintaan Penawaran Harga (Quotation)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pesan">Detail Pesan / Spesifikasi *</label>
+                            <textarea id="pesan" name="pesan" rows="5" placeholder="Tuliskan kebutuhan teknis, lokasi proyek, atau pertanyaan Anda..." required></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+                            <button type="reset" class="btn btn-secondary">Reset Form</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </section>
+
+            <!-- TABEL DAFTAR LAYANAN (Minimal 4 baris, thead, tbody, caption, colspan) -->
+            <section class="table-section">
+                <div class="table-responsive">
+                    <table class="service-table">
+                        <caption>Daftar Paket Layanan & Estimasi Biaya Operasional (<time datetime="2026">2026</time>)</caption>
+                        <thead>
+                            <tr>
+                                <th>Nama Layanan / Paket</th>
+                                <th>Cakupan Pekerjaan</th>
+                                <th>Estimasi Harga</th>
+                                <th>Durasi Pengerjaan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Audit & Inspeksi Kelistrikan</strong></td>
+                                <td>Pengukuran beban, termografi, dan laporan RCFA</td>
+                                <td>Rp 1.500.000</td>
+                                <td>1 – 2 Hari Kerja</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Setting & Komisioning VFD</strong></td>
+                                <td>Pemasangan, parameterisasi motor, dan uji beban</td>
+                                <td>Rp 1.850.000</td>
+                                <td>1 Hari Kerja</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sistem Monitoring Level Air</strong></td>
+                                <td>Sensor ultrasonik, panel indikator, dan kalibrasi</td>
+                                <td>Rp 3.200.000</td>
+                                <td>2 – 3 Hari Kerja</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Perakitan Panel Kontrol PLC</strong></td>
+                                <td>Wiring panel, pemrograman ladder, dan FAT</td>
+                                <td>Rp 4.500.000</td>
+                                <td>4 – 7 Hari Kerja</td>
+                            </tr>
+                            <tr class="table-highlight">
+                                <td colspan="2"><strong>Paket Kontrak Pemeliharaan Tahunan (Preventive Maintenance)</strong></td>
+                                <td><strong>Rp 12.000.000 / Tahun</strong></td>
+                                <td><strong>Kunjungan Bulanan</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- EMBED PETA LOKASI VIA IFRAME -->
+            <section class="map-section">
+                <h2>Lokasi Workshop & Kantor Operasional</h2>
+                <p>Jl. A. Yani Km. 34, Banjarbaru, Kalimantan Selatan</p>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=114.8150%2C-3.4550%2C114.8550%2C-3.4300&amp;layer=mapnik&amp;marker=-3.4425%2C114.8350" 
+                        title="Peta Lokasi Workshop Barito Tech Banjarbaru"
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 <strong>Reza Permana</strong> &mdash; NPM: <strong>2510020149</strong> &mdash; Kelas: <strong>SI 3A NON REGULER BANJARBARU</strong></p>
+        </div>
+    </footer>
+
+</body>
+</html>

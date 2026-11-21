@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda | Barito Tech - Reza Permana</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- HEADER & NAVBAR FIXED (Dengan Trik Checkbox Hamburger Mobile) -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Barito<span>Tech</span></a>
+            
+            <!-- Trik Checkbox CSS-Only Hamburger -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger" aria-label="Buka Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav class="nav-links">
+                <a href="index.html" class="active">Beranda</a>
+                <a href="#produk">Produk & Layanan</a>
+                <a href="kontak.html">Kontak</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>Selamat Datang di Barito Tech</h1>
+                <p>Solusi terpadu instalasi kelistrikan industri, panel kontrol otomatis, dan pengadaan perangkat teknis berkualitas tinggi di Kalimantan Selatan.</p>
+                <a href="kontak.html" class="btn btn-primary">Konsultasi & Pesan Sekarang</a>
+            </div>
+        </section>
+
+        <!-- SECTION KATALOG PRODUK / LAYANAN (Minimal 6 Kartu) -->
+        <section id="produk" class="section-padding">
+            <div class="container">
+                <div class="section-header sticky-subheader">
+                    <h2>Katalog Produk & Layanan Unggulan</h2>
+                    <p>Pilihan perangkat otomasi dan jasa rekayasa teknis standar industri</p>
+                </div>
+
+                <div class="card-grid">
+                    <!-- Kartu 1 -->
+                    <article class="card">
+                        <figure class="card-img">
+                            <img src="https://picsum.photos/seed/plc1/400/250" alt="Panel Kontrol PLC Otomasi">
+                            <figcaption class="badge">Best Seller</figcaption>
+                        </figure>
+                        <div class="card-body">
+                            <h3>Perakitan Panel PLC & Smart Relay</h3>
+                            <p>Desain dan perakitan panel kontrol berbasis PLC Modicon/Zelio untuk otomasi pompa dan mesin industri.</p>
+                            <div class="card-footer">
+                                <span class="price">Rp 4.500.000</span>
+                                <a href="kontak.html" class="btn btn-outline">Pesan</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Kartu 2 -->
+                    <article class="card">
+                        <figure class="card-img">
+                            <img src="https://picsum.photos/seed/sensor2/400/250" alt="Sensor Level Air Ultrasonik">
+                            <figcaption class="badge">IoT Ready</figcaption>
+                        </figure>
+                        <div class="card-body">
+                            <h3>Sistem Monitoring Level Air (TMA)</h3>
+                            <p>Instalasi sensor radar/ultrasonik jarak jauh dengan tampilan indikator digital real-time yang akurat.</p>
+                            <div class="card-footer">
+                                <span class="price">Rp 3.200.000</span>
+                                <a href="kontak.html" class="btn btn-outline">Pesan</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Kartu 3 -->
+                    <article class="card">
+                        <figure class="card-img">
+                            <img src="https://picsum.photos/seed/vfd3/400/250" alt="Inverter dan Mini VFD">
+                            <figcaption class="badge">Hemat Energi</figcaption>
+                        </figure>
+                        <div class="card-body">
+                            <h3>Instalasi & Setting Mini VFD</h3>
+                            <p>Pengaturan kecepatan motor listrik 1-fasa dan 3-fasa untuk efisiensi daya serta perlindungan beban lebih.</p>
+                            <div class="card-footer">
+                                <span class="price">Rp 1.850.000</span>
+                                <a href="kontak.html" class="btn btn-outline">Pesan</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Kartu 4 -->
+                    <article class="card">
+                        <figure class="card-img">
+                            <img src="https://picsum.photos/seed/audit4/400/250" alt="Inspeksi & Troubleshooting Listrik">
+                            <figcaption class="badge">Jasa Teknis</figcaption>
+                        </figure>
+                        <div class="card-body">
+                            <h3>Audit & Troubleshooting Kelistrikan</h3>
+                            <p>Pemeriksaan instalasi, pengukuran tahanan isolasi, dan analisis akar masalah (RCFA) gangguan sistem.</p>
+                            <div class="card-footer">
+                                <span class="price">Rp 1.500.000</span>
+                                <a href="kontak.html" class="btn btn-outline">Pesan</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Kartu 5 -->
+                    <article class="card">
+                        <figure class="card-img">
+                            <img src="https://picsum.photos/seed/fiber5/400/250" alt="Jaringan Fiber Optik Lapangan">
+                            <figcaption class="badge">Konektivitas</figcaption>
+                        </figure>
+                        <div class="card-body">
+                            <h3>Ekstensi Jaringan Fiber Optik</h3>
+                            <p>Penarikan kabel fiber optik dan konfigurasi media converter Gigabit untuk koneksi stabil jarak jauh.</p>
+                            <div class="card-footer">
+                                <span class="price">Rp 2.750.000</span>
+                                <a href="kontak.html" class="btn btn-outline">Pesan</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Kartu 6 -->
+                    <article class="card">
+                        <figure class="card-img">
+                            <img src="https://picsum.photos/seed/solar6/400/250" alt="Sistem Cadangan Daya PLTS">
+                            <figcaption class="badge">Energi Terbarukan</figcaption>
+                        </figure>
+                        <div class="card-body">
+                            <h3>Paket PLTS Off-Grid & Backup Daya</h3>
+                            <p>Sistem tenaga surya mandiri lengkap dengan inverter dan baterai untuk operasional tanpa henti.</p>
+                            <div class="card-footer">
+                                <span class="price">Rp 6.900.000</span>
+                                <a href="kontak.html" class="btn btn-outline">Pesan</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION TAMBAHAN (Keunggulan / Fitur & Testimoni Blockquote) -->
+        <section class="section-alt section-padding">
+            <div class="container">
+                <div class="extra-grid">
+                    <div class="features-box">
+                        <h2>Mengapa Memilih Barito Tech?</h2>
+                        <ul class="feature-list">
+                            <li><strong>Standar Keamanan Tinggi:</strong> Seluruh pekerjaan menerapkan prosedur isolasi energi (LOTO) yang ketat.</li>
+                            <li><strong>Komponen Original:</strong> Menggunakan perangkat kontrol industri resmi (Schneider, Omron, Siemens).</li>
+                            <li><strong>Dokumentasi Lengkap:</strong> Dilengkapi wiring diagram dan buku panduan pengoperasian sistem.</li>
+                            <li><strong>Garansi Purna Jual:</strong> Jaminan perawatan dan dukungan teknis selama 12 bulan penuh.</li>
+                        </ul>
+                    </div>
+
+                    <div class="testimonial-box">
+                        <h2>Testimoni Klien</h2>
+                        <blockquote>
+                            "Pengerjaan panel otomatis dan sensor level air sangat rapi, presisi, serta mudah dipantau. Tim teknis menjelaskan logika sistem dengan sangat jelas."
+                            <footer>
+                                — <strong>Ir. Hendra Wijaya</strong>, Manajer Operasional PDAM & Pengelolaan Air
+                                <br><time datetime="2026-10-15">15 Oktober 2026</time>
+                            </footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 <strong>Reza Permana</strong> &mdash; NPM: <strong>2510020149</strong> &mdash; Kelas: <strong>SI 3A NON REGULER BANJARBARU</strong></p>
+        </div>
+    </footer>
+
+</body>
+</html>

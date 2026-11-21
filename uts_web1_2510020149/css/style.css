@@ -1,0 +1,594 @@
+/* ==========================================================================
+   1. VARIABEL WARNA & RESET DASAR (Maksimal 4 Warna Utama + Dark Mode)
+   ========================================================================== */
+:root {
+    --color-primary: #0f4c81;      /* 1. Biru Teknik Utama */
+    --color-accent: #f59e0b;       /* 2. Kuning/Amber Aksen */
+    --color-bg: #f8fafc;           /* 3. Latar Belakang Terang */
+    --color-surface: #ffffff;     /* Permukaan Kartu/Header */
+    --color-text: #1e293b;         /* 4. Teks Gelap Netral */
+    --color-text-muted: #475569;
+    --color-border: #cbd5e1;
+    --shadow-sm: 0 4px 12px rgba(15, 76, 129, 0.08);
+    --shadow-lg: 0 12px 24px rgba(15, 76, 129, 0.15);
+    --nav-height: 70px;
+}
+
+/* Nilai Plus: Dark Mode otomatis sesuai preferensi sistem */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-primary: #38bdf8;
+        --color-accent: #fbbf24;
+        --color-bg: #0f172a;
+        --color-surface: #1e293b;
+        --color-text: #f1f5f9;
+        --color-text-muted: #94a3b8;
+        --color-border: #334155;
+        --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.35);
+        --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.5);
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    /* Kompensasi tinggi navbar fixed agar konten tidak tertutup */
+    padding-top: var(--nav-height);
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: 92%;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: 64px 0;
+}
+
+.section-alt {
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* ==========================================================================
+   2. NAVBAR FIXED & MENU HAMBURGER CSS-ONLY
+   ========================================================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--nav-height);
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+    z-index: 1000;
+}
+
+.nav-container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: var(--color-accent);
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 6px 4px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-accent);
+}
+
+/* Checkbox & Hamburger tersembunyi di desktop */
+.menu-toggle,
+.hamburger {
+    display: none;
+}
+
+/* ==========================================================================
+   3. HERO SECTION & TOMBOL (CTA)
+   ========================================================================== */
+.hero {
+    min-height: 460px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #0f4c81 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 60px 20px;
+}
+
+.hero-content {
+    max-width: 720px;
+}
+
+.hero h1 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #e2e8f0;
+    margin-bottom: 28px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-primary {
+    background-color: var(--color-accent);
+    color: #0f172a;
+}
+
+.btn-primary:hover {
+    background-color: #d97706;
+    color: #ffffff;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border-color: var(--color-border);
+    color: var(--color-text);
+}
+
+.btn-outline {
+    padding: 8px 16px;
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    font-size: 0.88rem;
+}
+
+.btn-outline:hover {
+    background-color: var(--color-primary);
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   4. SECTION HEADER (Sticky) & GRID KARTU PRODUK
+   ========================================================================== */
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Nilai Plus: position:sticky pada subheader */
+.sticky-subheader {
+    position: sticky;
+    top: var(--nav-height);
+    background-color: var(--color-bg);
+    padding: 14px 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.section-header h2,
+.section-header h1 {
+    font-size: 1.9rem;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+}
+
+.section-header p {
+    color: var(--color-text-muted);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Nilai Plus: Hover effect halus */
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+.card-img {
+    position: relative;
+    height: 190px;
+    overflow: hidden;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: var(--color-primary);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+.card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-body h3 {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+    color: var(--color-text);
+}
+
+.card-body p {
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 14px;
+    border-top: 1px solid var(--color-border);
+}
+
+.price {
+    font-weight: 700;
+    color: var(--color-primary);
+    font-size: 1rem;
+}
+
+/* ==========================================================================
+   5. SECTION TAMBAHAN (FITUR & TESTIMONI BLOCKQUOTE)
+   ========================================================================== */
+.extra-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    align-items: start;
+}
+
+.features-box h2,
+.testimonial-box h2 {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: 18px;
+}
+
+.feature-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.feature-list li {
+    padding-left: 24px;
+    position: relative;
+    font-size: 0.95rem;
+}
+
+.feature-list li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: 700;
+}
+
+blockquote {
+    background-color: var(--color-bg);
+    border-left: 4px solid var(--color-accent);
+    padding: 22px;
+    border-radius: 0 12px 12px 0;
+    font-style: italic;
+    color: var(--color-text);
+    box-shadow: var(--shadow-sm);
+}
+
+blockquote footer {
+    margin-top: 14px;
+    font-style: normal;
+    font-size: 0.88rem;
+    color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   6. HALAMAN KONTAK: FORM, TABEL LAYANAN & PETA IFRAME
+   ========================================================================== */
+.contact-section {
+    max-width: 720px;
+    margin: 0 auto 56px auto;
+}
+
+.contact-form fieldset {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: var(--shadow-sm);
+}
+
+.contact-form legend {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--color-primary);
+    padding: 0 10px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 0.92rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+/* Tabel Layanan */
+.table-section {
+    margin-bottom: 56px;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.service-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--color-surface);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.service-table caption {
+    caption-side: top;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    margin-bottom: 14px;
+    text-align: left;
+}
+
+.service-table th,
+.service-table td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.93rem;
+}
+
+.service-table thead {
+    background-color: var(--color-primary);
+    color: #ffffff;
+}
+
+.service-table tbody tr:hover {
+    background-color: rgba(15, 76, 129, 0.05);
+}
+
+.table-highlight {
+    background-color: rgba(245, 158, 11, 0.12);
+}
+
+/* Peta Iframe */
+.map-section h2 {
+    font-size: 1.4rem;
+    color: var(--color-primary);
+    margin-bottom: 6px;
+}
+
+.map-section p {
+    color: var(--color-text-muted);
+    margin-bottom: 16px;
+}
+
+.map-container {
+    width: 100%;
+    height: 320px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* ==========================================================================
+   7. FOOTER
+   ========================================================================== */
+.site-footer {
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+    padding: 24px 16px;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   8. RESPONSIVE DESIGN (Media Query <= 768px & Tanpa Scroll Horizontal di 360px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* Tampilkan Hamburger Menu */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    .hamburger span {
+        width: 26px;
+        height: 3px;
+        background-color: var(--color-text);
+        border-radius: 2px;
+        transition: 0.3s;
+    }
+
+    /* Menu Vertikal Mobile */
+    .nav-links {
+        position: absolute;
+        top: var(--nav-height);
+        left: 0;
+        width: 100%;
+        background-color: var(--color-surface);
+        flex-direction: column;
+        gap: 0;
+        border-bottom: 1px solid var(--color-border);
+        display: none;
+    }
+
+    .nav-links a {
+        padding: 14px 24px;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    /* Buka menu saat checkbox dicentang */
+    .menu-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+
+    /* Hero font diperkecil */
+    .hero {
+        min-height: 380px;
+    }
+
+    .hero h1 {
+        font-size: 1.85rem;
+    }
+
+    .hero p {
+        font-size: 0.98rem;
+    }
+
+    /* Kartu & Section Tambahan menjadi 1 kolom */
+    .card-grid,
+    .extra-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
